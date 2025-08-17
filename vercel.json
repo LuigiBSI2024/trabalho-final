@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/images.js": {
-      "runtime": "@vercel/node"
+      "runtime": "nodejs18.x"
     }
   },
   "routes": [
@@ -9,8 +9,5 @@
       "src": "/api/(.*)",
       "dest": "/api/$1"
     }
-  ],
-  "env": {
-    "PEXELS_API_KEY": "@PEXELS_API_KEY"
-  }
+  ]
 }
