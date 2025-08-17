@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/images.js": {
+    "api_pexels/images.js": {
       "runtime": "nodejs20.x"
     }
   },
