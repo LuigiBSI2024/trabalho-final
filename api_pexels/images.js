@@ -1,3 +1,4 @@
+// Verificar mais tarde
 export default async function handler(req, res) {
   // Permitir apenas GET requests
   if (req.method !== 'GET') {
