@@ -1,153 +1,182 @@
-/* Importa a fonte 'Poppins' do Google Fonts para ser usada no site */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+/* Importa a fonte 'Poppins' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* --- ESTILOS GERAIS DO SITE --- */
+/* Estilos gerais */
 body {
-    font-family: 'Poppins', sans-serif; /* Define a fonte principal */
-    background-color: #1a1a2e; /* Cor de fundo azul escuro */
-    color: #e0e0e0; /* Cor padrão do texto (cinza claro) */
-    margin: 0; /* Remove a margem padrão do navegador */
-    padding: 20px; /* Adiciona um respiro nas bordas da página */
+    font-family: 'Poppins', sans-serif;
+    background-color: #1c1c1c;
+    color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
 }
 
-/* --- CABEÇALHO --- */
+/* Cabeçalho e elementos superiores */
 header {
-    text-align: center; /* Centraliza o conteúdo do cabeçalho */
-    padding: 20px; /* Adiciona espaçamento interno */
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-/* --- BARRA DE BUSCA --- */
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ff9f1c;
+    object-fit: cover;
+}
+
+.categorias {
+    margin-top: 20px;
+}
+
+.categorias button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: 1px solid #ff9f1c;
+    background-color: transparent;
+    color: #ff9f1c;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.categorias button:hover {
+    background-color: #ff9f1c;
+    color: #1c1c1c;
+}
+
 #busca {
-    padding: 12px 20px; /* Espaçamento interno (vertical e horizontal) */
-    width: 90%; /* Largura relativa à tela */
-    max-width: 600px; /* Largura máxima para não ficar muito grande em telas maiores */
-    margin: 20px auto 40px; /* Espaçamento externo (centraliza horizontalmente) */
-    display: block; /* Garante que a margem 'auto' funcione */
-    border-radius: 30px; /* Bordas totalmente arredondadas */
-    border: 1px solid #3a3a5e; /* Borda sutil */
-    background-color: #2a2a4e; /* Cor de fundo que combina com o tema */
-    color: #fff; /* Cor do texto digitado */
-    font-size: 16px; /* Tamanho da fonte */
-}
-
-/* Estiliza o texto de placeholder da busca */
-#busca::placeholder {
-    color: #888; /* Cor do texto de exemplo (cinza) */
-}
-
-/* --- GRADE DE PRODUTOS (CARDÁPIO) --- */
-.cardapio {
-    display: grid; /* Usa o layout em grade, poderoso para alinhamento */
-    /* Cria colunas que se ajustam sozinhas: no mínimo 220px de largura, preenchendo o espaço disponível */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px; /* Espaçamento entre os cards */
-    max-width: 1200px; /* Largura máxima da grade */
-    margin: 0 auto; /* Centraliza a grade na página */
-}
-
-/* --- CARD INDIVIDUAL DO PRODUTO --- */
-.card {
-    background-color: #2a2a4e; /* Cor de fundo do card */
-    border-radius: 15px; /* Bordas arredondadas */
-    padding: 15px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o conteúdo do card */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave para o efeito 'hover' */
-}
-
-/* Efeito ao passar o mouse por cima do card */
-.card:hover {
-    transform: translateY(-10px); /* Move o card 10px para cima */
-    box-shadow: 0 8px 25px rgba(45, 212, 191, 0.3); /* Aumenta e colore a sombra */
-}
-
-/* Imagem dentro do card */
-.card img {
-    width: 100%; /* Imagem ocupa toda a largura do card */
-    height: 150px; /* Altura fixa para manter a consistência */
-    object-fit: cover; /* A imagem cobre o espaço sem distorcer */
-    border-radius: 10px; /* Bordas arredondadas na imagem */
-    margin-bottom: 10px; /* Espaço abaixo da imagem */
-}
-
-/* Títulos dentro do card (nome do produto) */
-h3, h4 {
+    padding: 12px 20px;
+    width: 90%;
+    max-width: 500px;
+    margin: 30px auto;
+    display: block;
+    border-radius: 25px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
     color: #fff;
-    margin: 10px 0 5px 0; /* Espaçamento acima e abaixo do título */
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-/* Preço do produto */
+#busca:focus {
+    outline: none;
+    border-color: #ff9f1c;
+    box-shadow: 0 0 15px rgba(255, 159, 28, 0.2);
+}
+
+/* Cardápio e cards de produto */
+.cardapio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.card {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.card p {
+    color: #bbb;
+    margin: 0 0 15px 0;
+    flex-grow: 1;
+}
+
 .preco {
-    color: #2dd4bf; /* Cor de destaque (verde-água) */
-    font-weight: bold; /* Texto em negrito */
-    font-size: 1.1rem; /* Tamanho da fonte */
-    margin-bottom: 15px; /* Espaço abaixo do preço */
+    color: #ff9f1c !important;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 15px !important;
 }
 
-/* --- BOTÕES --- */
-/* Estilo geral para botões e o botão específico do card */
-button, .card button {
-    background-color: #2dd4bf; /* Cor de fundo do botão */
-    border: none; /* Remove a borda padrão */
-    padding: 10px 20px; /* Espaçamento interno */
-    color: #1a1a2e; /* Cor do texto (escura para contrastar) */
-    border-radius: 20px; /* Bordas bem arredondadas */
-    cursor: pointer; /* Muda o cursor para uma "mãozinha" */
-    font-weight: bold; /* Texto em negrito */
-    font-family: 'Poppins', sans-serif; /* Garante a mesma fonte do site */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Animação suave */
+.card button {
+    background-color: #ff9f1c;
+    border: none;
+    padding: 12px 20px;
+    color: #1c1c1c;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+    width: 100%;
 }
 
-/* Efeito ao passar o mouse por cima dos botões */
-button:hover, .card button:hover {
-    background-color: #24bca8; /* Escurece um pouco a cor de fundo */
-    transform: scale(1.05); /* Aumenta levemente o tamanho do botão */
+.card button:hover {
+    background-color: #fca311;
 }
 
-/* --- RODAPÉ --- */
+/* Rodapé */
 footer {
-    padding: 40px 20px; /* Espaçamento interno generoso */
-    text-align: center; /* Centraliza o conteúdo */
+    padding: 20px;
+    margin-top: 40px;
 }
 
-/* Link do WhatsApp no rodapé */
 footer a {
-    background-color: #25D366; /* Cor oficial do WhatsApp */
-    padding: 15px 30px; /* Espaçamento interno */
-    color: white; /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado do link */
-    border-radius: 30px; /* Bordas arredondadas */
-    font-weight: bold; /* Texto em negrito */
-    font-size: 1.1rem; /* Tamanho da fonte */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-    transition: transform 0.2s ease, background-color 0.3s ease; /* Animação suave */
-    display: inline-block; /* Permite que a propriedade 'transform' funcione */
+    background-color: #25d366;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+    display: inline-block;
 }
 
-/* Efeito ao passar o mouse no link do WhatsApp */
 footer a:hover {
-    background-color: #1DAE50; /* Cor do WhatsApp um pouco mais escura */
-    transform: translateY(-5px); /* Move o botão levemente para cima */
+    transform: scale(1.05);
 }
 
-/* --- GALERIA DE IMAGENS (CÓDIGO ORIGINAL) --- */
-/* Primeira galeria */
+/* Seção da API de imagens */
 .galeria {
-  display: flex; /* Usa o layout flexbox */
-  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-  gap: 10px; /* Espaço entre as imagens */
-  justify-content: center; /* Centraliza as imagens na linha */
-  margin-top: 20px; /* Espaço acima da galeria */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
 }
-/* Imagem dentro da primeira galeria */
 .galeria img {
-  width: 300px; /* Largura fixa */
-  height: 200px; /* Altura fixa */
-  object-fit: cover; /* Cobre o espaço sem distorcer */
-  border-radius: 10px; /* Bordas arredondadas */
+  width: 240px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-/* Segunda galeria (estilo idêntico à primeira) */
 .galeria2 {
   display: flex;
   flex-wrap: wrap;
@@ -155,12 +184,9 @@ footer a:hover {
   justify-content: center;
   margin-top: 20px;
 }
-/* Imagem dentro da segunda galeria */
 .galeria2 img {
-  width: 300px;
-  height: 200px;
+  width: 240px;
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
 }
-/*Fim da configuração para a API de imagens (https://www.pexels.com/) */
-
