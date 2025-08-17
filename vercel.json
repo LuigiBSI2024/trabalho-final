@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api_pexels/images.js": {
+    "api_pexels/pexels.js": {
       "runtime": "nodejs18.x"
     }
   },
