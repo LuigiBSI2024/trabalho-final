@@ -125,40 +125,23 @@ const imagensFallback = {
 };
 
 // Função para buscar imagens (primeiro tenta API, depois fallback)
+// Função ajustada para chamar rota segura do Vercel
 async function fetchImages(query, perPage = 8) {
-  try {
-    console.log(`Tentando buscar imagens para: ${query}`);
-    
-    // Tentar a API primeiro
-    const response = await fetch(`/api/images?query=${encodeURIComponent(query)}&per_page=${perPage}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
+    try {
+        const response = await fetch(`/api/pexels?query=${encodeURIComponent(query)}&per_page=${perPage}`);
+        
+        if (!response.ok) {
+            throw new Error("Erro na resposta da API");
+        }
 
-    if (response.ok) {
-      const data = await response.json();
-      console.log("Dados da API recebidos:", data);
-      return data;
-    } else {
-      throw new Error(`API não disponível: ${response.status}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Erro ao buscar imagens:", error);
+        return { photos: [] }; // garante retorno vazio se falhar
     }
-
-  } catch (error) {
-    console.log("API não disponível, usando imagens de fallback:", error.message);
-    
-    // Usar imagens de fallback
-    const fallbackImages = imagensFallback[query] || imagensFallback.hamburger;
-    return {
-      photos: fallbackImages.map((url, index) => ({
-        id: index,
-        src: { medium: url },
-        photographer: 'Pexels'
-      }))
-    };
-  }
 }
+
 
 // Função para exibir imagens na galeria
 function displayImages(photos, galleryId) {
