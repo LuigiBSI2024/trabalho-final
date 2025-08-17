@@ -1,7 +1,7 @@
 /* Importa a fonte 'Poppins' do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* --- ESTILOS GERAIS --- */
+/* Estilos gerais */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #1c1c1c;
@@ -11,7 +11,7 @@ body {
     padding: 20px;
 }
 
-/* --- CABEÇALHO E ELEMENTOS SUPERIORES --- */
+/* Cabeçalho e elementos superiores */
 header {
     padding: 20px;
     margin-bottom: 20px;
@@ -19,9 +19,10 @@ header {
 }
 
 .logo {
-    width: 120px;
-    border-radius: 50%;
-    border: 3px solid #ff9f1c;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff9f1c;
+    margin-bottom: 10px;
 }
 
 .categorias button {
@@ -62,7 +63,7 @@ header {
     box-shadow: 0 0 15px rgba(255, 159, 28, 0.2);
 }
 
-/* --- CARDÁPIO E CARDS DE PRODUTO --- */
+/* Cardápio e cards de produto */
 .cardapio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -76,15 +77,14 @@ header {
     background-color: #2a2a2a;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
 }
 
 .card img {
@@ -103,12 +103,13 @@ header {
 .card h3 {
     margin: 0 0 8px 0;
     font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .card p {
-    flex-grow: 1;
     color: #bbb;
     margin: 0 0 15px 0;
+    flex-grow: 1;
 }
 
 .preco {
@@ -135,7 +136,7 @@ header {
     background-color: #fca311;
 }
 
-/* --- RODAPÉ --- */
+/* Rodapé */
 footer {
     padding: 20px;
     margin-top: 40px;
@@ -154,10 +155,10 @@ footer a {
 }
 
 footer a:hover {
-    transform: translateY(-3px);
+    transform: scale(1.05);
 }
 
-/* --- SEÇÃO DA API DE IMAGENS --- */
+/* Seção da API de imagens */
 .galeria {
   display: flex;
   flex-wrap: wrap;
