@@ -1,153 +1,150 @@
-/* Importa a fonte 'Poppins' do Google Fonts para ser usada no site */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+/* Importa a fonte 'Poppins' do Google Fonts para um visual mais moderno */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* --- ESTILOS GERAIS DO SITE --- */
+/* --- ESTILOS GERAIS --- */
 body {
-    font-family: 'Poppins', sans-serif; /* Define a fonte principal */
-    background-color: #1a1a2e; /* Cor de fundo azul escuro */
-    color: #e0e0e0; /* Cor padrão do texto (cinza claro) */
-    margin: 0; /* Remove a margem padrão do navegador */
-    padding: 20px; /* Adiciona um respiro nas bordas da página */
+    font-family: 'Poppins', sans-serif; 
+    background-color: #1c1c1c; 
+    color: #f0f0f0; 
+    text-align: center;
+    margin: 0;
+    padding: 20px; 
 }
 
-/* --- CABEÇALHO --- */
+/* --- CABEÇALHO E ELEMENTOS SUPERIORES --- */
 header {
-    text-align: center; /* Centraliza o conteúdo do cabeçalho */
-    padding: 20px; /* Adiciona espaçamento interno */
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-/* --- BARRA DE BUSCA --- */
+.logo {
+    width: 120px; 
+    border-radius: 50%;
+    border: 3px solid #ff9f1c; 
+}
+
+/* Botões de Categoria */
+.categorias button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: 1px solid #ff9f1c; 
+    background-color: transparent; 
+    color: #ff9f1c; 
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease; 
+}
+
+.categorias button:hover {
+    background-color: #ff9f1c;  
+    color: #1c1c1c;  
+
+/* Barra de Busca */
 #busca {
-    padding: 12px 20px; /* Espaçamento interno (vertical e horizontal) */
-    width: 90%; /* Largura relativa à tela */
-    max-width: 600px; /* Largura máxima para não ficar muito grande em telas maiores */
-    margin: 20px auto 40px; /* Espaçamento externo (centraliza horizontalmente) */
-    display: block; /* Garante que a margem 'auto' funcione */
-    border-radius: 30px; /* Bordas totalmente arredondadas */
-    border: 1px solid #3a3a5e; /* Borda sutil */
-    background-color: #2a2a4e; /* Cor de fundo que combina com o tema */
-    color: #fff; /* Cor do texto digitado */
-    font-size: 16px; /* Tamanho da fonte */
-}
-
-/* Estiliza o texto de placeholder da busca */
-#busca::placeholder {
-    color: #888; /* Cor do texto de exemplo (cinza) */
-}
-
-/* --- GRADE DE PRODUTOS (CARDÁPIO) --- */
-.cardapio {
-    display: grid; /* Usa o layout em grade, poderoso para alinhamento */
-    /* Cria colunas que se ajustam sozinhas: no mínimo 220px de largura, preenchendo o espaço disponível */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px; /* Espaçamento entre os cards */
-    max-width: 1200px; /* Largura máxima da grade */
-    margin: 0 auto; /* Centraliza a grade na página */
-}
-
-/* --- CARD INDIVIDUAL DO PRODUTO --- */
-.card {
-    background-color: #2a2a4e; /* Cor de fundo do card */
-    border-radius: 15px; /* Bordas arredondadas */
-    padding: 15px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o conteúdo do card */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave para o efeito 'hover' */
-}
-
-/* Efeito ao passar o mouse por cima do card */
-.card:hover {
-    transform: translateY(-10px); /* Move o card 10px para cima */
-    box-shadow: 0 8px 25px rgba(45, 212, 191, 0.3); /* Aumenta e colore a sombra */
-}
-
-/* Imagem dentro do card */
-.card img {
-    width: 100%; /* Imagem ocupa toda a largura do card */
-    height: 150px; /* Altura fixa para manter a consistência */
-    object-fit: cover; /* A imagem cobre o espaço sem distorcer */
-    border-radius: 10px; /* Bordas arredondadas na imagem */
-    margin-bottom: 10px; /* Espaço abaixo da imagem */
-}
-
-/* Títulos dentro do card (nome do produto) */
-h3, h4 {
+    padding: 12px 20px; 
+    width: 90%;
+    max-width: 500px; 
+    margin: 20px auto;
+    display: block;
+    border-radius: 25px; 
+    border: 1px solid #444;
+    background-color: #2a2a2a;
     color: #fff;
-    margin: 10px 0 5px 0; /* Espaçamento acima e abaixo do título */
+    font-size: 16px;
 }
 
-/* Preço do produto */
+/*  CARDÁPIO E CARDS DE PRODUTO */
+.cardapio {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 30px; 
+    max-width: 1200px;
+    margin: 40px auto; 
+}
+
+.card {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+
+.card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 160px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
 .preco {
-    color: #2dd4bf; /* Cor de destaque (verde-água) */
-    font-weight: bold; /* Texto em negrito */
-    font-size: 1.1rem; /* Tamanho da fonte */
-    margin-bottom: 15px; /* Espaço abaixo do preço */
+    color: #ff9f1c; 
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
-/* --- BOTÕES --- */
-/* Estilo geral para botões e o botão específico do card */
+/* Botão de Adicionar no Card */
 button, .card button {
-    background-color: #2dd4bf; /* Cor de fundo do botão */
-    border: none; /* Remove a borda padrão */
-    padding: 10px 20px; /* Espaçamento interno */
-    color: #1a1a2e; /* Cor do texto (escura para contrastar) */
-    border-radius: 20px; /* Bordas bem arredondadas */
-    cursor: pointer; /* Muda o cursor para uma "mãozinha" */
-    font-weight: bold; /* Texto em negrito */
-    font-family: 'Poppins', sans-serif; /* Garante a mesma fonte do site */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Animação suave */
+    background-color: #ff9f1c; 
+    border: none;
+    padding: 10px 20px;
+    color: #1c1c1c; 
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
 }
 
-/* Efeito ao passar o mouse por cima dos botões */
 button:hover, .card button:hover {
-    background-color: #24bca8; /* Escurece um pouco a cor de fundo */
-    transform: scale(1.05); /* Aumenta levemente o tamanho do botão */
+    background-color: #fca311; 
 }
 
 /* --- RODAPÉ --- */
 footer {
-    padding: 40px 20px; /* Espaçamento interno generoso */
-    text-align: center; /* Centraliza o conteúdo */
+    padding: 20px;
+    margin-top: 40px;
 }
 
-/* Link do WhatsApp no rodapé */
 footer a {
-    background-color: #25D366; /* Cor oficial do WhatsApp */
-    padding: 15px 30px; /* Espaçamento interno */
-    color: white; /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado do link */
-    border-radius: 30px; /* Bordas arredondadas */
-    font-weight: bold; /* Texto em negrito */
-    font-size: 1.1rem; /* Tamanho da fonte */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-    transition: transform 0.2s ease, background-color 0.3s ease; /* Animação suave */
-    display: inline-block; /* Permite que a propriedade 'transform' funcione */
+    background-color: #25d366; 
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
 }
 
-/* Efeito ao passar o mouse no link do WhatsApp */
 footer a:hover {
-    background-color: #1DAE50; /* Cor do WhatsApp um pouco mais escura */
-    transform: translateY(-5px); /* Move o botão levemente para cima */
+    transform: translateY(-3px); 
 }
 
-/* --- GALERIA DE IMAGENS (CÓDIGO ORIGINAL) --- */
-/* Primeira galeria */
+/* SEÇÃO DA API DE IMAGENS*/
+/*Configuração para a API de imagens abaixo */
+
 .galeria {
-  display: flex; /* Usa o layout flexbox */
-  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-  gap: 10px; /* Espaço entre as imagens */
-  justify-content: center; /* Centraliza as imagens na linha */
-  margin-top: 20px; /* Espaço acima da galeria */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
 }
-/* Imagem dentro da primeira galeria */
 .galeria img {
-  width: 300px; /* Largura fixa */
-  height: 200px; /* Altura fixa */
-  object-fit: cover; /* Cobre o espaço sem distorcer */
-  border-radius: 10px; /* Bordas arredondadas */
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-/* Segunda galeria (estilo idêntico à primeira) */
 .galeria2 {
   display: flex;
   flex-wrap: wrap;
@@ -155,88 +152,9 @@ footer a:hover {
   justify-content: center;
   margin-top: 20px;
 }
-/* Imagem dentro da segunda galeria */
 .galeria2 img {
   width: 300px;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
-}
-/*Fim da configuração para a API de imagens (https://www.pexels.com/) */
-
-/* --- Seção de Destaque (Hero Section) --- */
-
-.hero {
-    position: relative; /* Necessário para posicionar o texto sobre a imagem */
-    text-align: center;
-    color: white;
-    height: 60vh; /* Ocupa 60% da altura da tela */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Garante que a imagem não saia dos limites */
-}
-
-.hero-image-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* Coloca a imagem no fundo */
-}
-
-/* A imagem dentro do container */
-.hero-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cobre todo o espaço sem distorcer */
-}
-
-/* Camada escura sobre a imagem para dar contraste ao texto */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto com 50% de opacidade */
-    z-index: 2;
-}
-
-/* O texto que fica sobre a imagem */
-.hero-text {
-    position: relative;
-    z-index: 3; /* Coloca o texto na frente de tudo */
-    padding: 20px;
-}
-
-.hero-text h1 {
-    font-size: 3rem; /* Tamanho grande para o título */
-    margin-bottom: 10px;
-    font-weight: 700;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Sombra no texto para melhor leitura */
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-}
-
-/* Botão de chamada para ação */
-.hero-button {
-    background-color: #2dd4bf;
-    color: #1a1a2e;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.hero-button:hover {
-    background-color: #fff;
-    transform: scale(1.05);
 }
