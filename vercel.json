@@ -11,6 +11,6 @@
     }
   ],
   "env": {
-    "PEXELS_API_KEY": "@PEXELS_API_KEY
+    "PEXELS_API_KEY": "@PEXELS_API_KEY"
   }
 }
