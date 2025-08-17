@@ -1,5 +1,7 @@
-"functions": {
-  "api_pexels/images.js": {
-    "runtime": "@vercel/node@18.x"
+{
+  "functions": {
+    "api_pexels/images.js": {
+      "runtime": "@vercel/node@18.x"
+    }
   }
 }
