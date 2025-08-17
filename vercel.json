@@ -1,7 +1,7 @@
 {
   "functions": {
     "api_pexels/pexels.js": {
-      "runtime": "@vercel/node@18.x"
+      "runtime": "nodejs20.x"
     }
   }
 }
