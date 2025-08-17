@@ -1,13 +1,5 @@
-{
-  "functions": {
-    "api_pexels/pexels.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    }
-  ]
+"functions": {
+  "api_pexels/images.js": {
+    "runtime": "@vercel/node@18.x"
+  }
 }
