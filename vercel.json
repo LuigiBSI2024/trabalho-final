@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api_pexels/pexels.js": {
-      "runtime": "@vercel/node@3"
-    }
-  }
-}
