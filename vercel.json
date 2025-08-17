@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "api/images.js": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
+  ],
+  "env": {
+    "PEXELS_API_KEY": "@pexels_api_key"
+  }
+}
