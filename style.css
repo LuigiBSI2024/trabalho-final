@@ -1,110 +1,138 @@
-/* Importa a fonte 'Poppins' do Google Fonts para um visual mais moderno */
+/* Importa a fonte 'Poppins' do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* --- ESTILOS GERAIS --- */
 body {
-    font-family: 'Poppins', sans-serif; 
-    background-color: #1c1c1c; 
-    color: #f0f0f0; 
+    font-family: 'Poppins', sans-serif;
+    background-color: #1c1c1c;
+    color: #f0f0f0;
     text-align: center;
     margin: 0;
-    padding: 20px; 
+    padding: 20px;
 }
 
 /* --- CABEÇALHO E ELEMENTOS SUPERIORES --- */
 header {
     padding: 20px;
     margin-bottom: 20px;
+    border-bottom: 1px solid #333;
 }
 
 .logo {
-    width: 120px; 
+    width: 120px;
     border-radius: 50%;
-    border: 3px solid #ff9f1c; 
+    border: 3px solid #ff9f1c;
 }
 
-/* Botões de Categoria */
 .categorias button {
     margin: 5px;
     padding: 10px 20px;
-    border: 1px solid #ff9f1c; 
-    background-color: transparent; 
-    color: #ff9f1c; 
+    border: 1px solid #ff9f1c;
+    background-color: transparent;
+    color: #ff9f1c;
     border-radius: 20px;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 
 .categorias button:hover {
-    background-color: #ff9f1c;  
-    color: #1c1c1c;  
+    background-color: #ff9f1c;
+    color: #1c1c1c;
+}
 
-/* Barra de Busca */
 #busca {
-    padding: 12px 20px; 
+    padding: 12px 20px;
     width: 90%;
-    max-width: 500px; 
-    margin: 20px auto;
+    max-width: 500px;
+    margin: 30px auto;
     display: block;
-    border-radius: 25px; 
+    border-radius: 25px;
     border: 1px solid #444;
     background-color: #2a2a2a;
     color: #fff;
     font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-/*  CARDÁPIO E CARDS DE PRODUTO */
+#busca:focus {
+    outline: none;
+    border-color: #ff9f1c;
+    box-shadow: 0 0 15px rgba(255, 159, 28, 0.2);
+}
+
+/* --- CARDÁPIO E CARDS DE PRODUTO --- */
 .cardapio {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-    gap: 30px; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
     max-width: 1200px;
-    margin: 40px auto; 
+    margin: 40px auto;
+    text-align: left;
 }
 
 .card {
     background-color: #2a2a2a;
     border-radius: 15px;
-    padding: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
 
 .card:hover {
-    transform: translateY(-8px); 
+    transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card img {
     width: 100%;
-    height: 160px; 
-    object-fit: cover; 
-    border-radius: 10px;
-    margin-bottom: 15px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+}
+
+.card p {
+    flex-grow: 1;
+    color: #bbb;
+    margin: 0 0 15px 0;
 }
 
 .preco {
-    color: #ff9f1c; 
-    font-weight: 600;
-    font-size: 1.2rem;
+    color: #ff9f1c !important;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 15px !important;
 }
 
-/* Botão de Adicionar no Card */
-button, .card button {
-    background-color: #ff9f1c; 
+.card button {
+    background-color: #ff9f1c;
     border: none;
-    padding: 10px 20px;
-    color: #1c1c1c; 
+    padding: 12px 20px;
+    color: #1c1c1c;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
-button:hover, .card button:hover {
-    background-color: #fca311; 
+.card button:hover {
+    background-color: #fca311;
 }
 
 /* --- RODAPÉ --- */
@@ -114,7 +142,7 @@ footer {
 }
 
 footer a {
-    background-color: #25d366; 
+    background-color: #25d366;
     padding: 12px 25px;
     color: white;
     text-decoration: none;
@@ -122,15 +150,14 @@ footer a {
     font-weight: 600;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease;
+    display: inline-block;
 }
 
 footer a:hover {
-    transform: translateY(-3px); 
+    transform: translateY(-3px);
 }
 
-/* SEÇÃO DA API DE IMAGENS*/
-/*Configuração para a API de imagens abaixo */
-
+/* --- SEÇÃO DA API DE IMAGENS --- */
 .galeria {
   display: flex;
   flex-wrap: wrap;
@@ -139,8 +166,8 @@ footer a:hover {
   margin-top: 20px;
 }
 .galeria img {
-  width: 300px;
-  height: 200px;
+  width: 240px;
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -153,8 +180,8 @@ footer a:hover {
   margin-top: 20px;
 }
 .galeria2 img {
-  width: 300px;
-  height: 200px;
+  width: 240px;
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
 }
