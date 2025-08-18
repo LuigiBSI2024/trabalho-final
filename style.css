@@ -18,15 +18,11 @@ header {
 }
 
 .logo {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 3px solid #ff9f1c;
-    object-fit: cover;
-}
-
-.categorias {
-    margin-top: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; 
+    border: 3px solid #ff9f1c; 
+    object-fit: cover; 
 }
 
 .categorias button {
@@ -113,7 +109,7 @@ header {
 .card p {
     color: #bbb;
     margin: 0 0 15px 0;
-    flex-grow: 1; /* A "mágica" que empurra o conteúdo para baixo */
+    flex-grow: 1;
 }
 
 .preco {
@@ -121,7 +117,6 @@ header {
     font-weight: 700;
     font-size: 1.3rem;
     margin-bottom: 15px !important;
-    flex-grow: 0; /* Garante que o preço não estique */
 }
 
 .card button {
