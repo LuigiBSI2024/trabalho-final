@@ -191,7 +191,7 @@ footer a:hover {
   border-radius: 10px;
 }
 
-.card-bebida img {
-    object-fit: contain; 
-    background-color: white; 
+.pagina-bebidas .card img {
+    object-fit: contain !important; 
+    background-color: white !important;
 }
